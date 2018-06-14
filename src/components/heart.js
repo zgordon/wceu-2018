@@ -10,12 +10,12 @@ const icon = <svg width='20px' height='20px' viewBox='0 0 20 20' xmlns='http://w
 </svg>;
 
 export const Heart = props => {
-	const { filled } = props;
+	const { active } = props;
 
 	// Add the filled class if it's in the props using classNames
 	let classes = classNames(
 		'heart',
-		{ 'filled': filled }
+		{ 'active': active }
 	);
 
 	// Return the heart icon
