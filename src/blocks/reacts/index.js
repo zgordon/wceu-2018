@@ -3,6 +3,7 @@
  */
 import './style.scss';
 import { Heart } from '../../components/heart.js';
+import { Counter } from '../../components/counter.js';
 
 /**
  * Internal block libraries
@@ -55,18 +56,17 @@ export default registerBlockType(
 						<div className="heart-wrap">
 							<Heart/>
 						</div>
-						<div className="count-wrap">
-							<div className="reacts-block-count">
-								{ reacts }
-							</div>
-						</div>
+						<Counter count={ reacts } />
 					</div>
 				</div>
 			];
 		},
 		save: props => {
+			const { attributes: { reacts } } = props;
 			return (
-				<p>{ __( 'Reacts go here', 'reactsblock' ) }</p>
+				<div className="reacts-block-wrap">
+					<Counter count={ reacts } />
+				</div>
 			);
 		},
 	},
