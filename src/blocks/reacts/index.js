@@ -2,8 +2,7 @@
  * Block dependencies and components
  */
 import './style.scss';
-import { Heart } from '../../components/heart.js';
-import { Counter } from '../../components/counter.js';
+import { Wrapper } from '../../components/wrapper.js';
 
 /**
  * Internal block libraries
@@ -51,14 +50,7 @@ export default registerBlockType(
 						</PanelBody>
 					</InspectorControls>
 				),
-				<div className={ className } >
-					<div className="reacts-block-wrap">
-						<div className="heart-wrap">
-							<Heart/>
-						</div>
-						<Counter count={ reacts } />
-					</div>
-				</div>
+				<Wrapper reacts={ reacts }/>
 			];
 		},
 		save() {
