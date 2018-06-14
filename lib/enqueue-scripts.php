@@ -8,8 +8,8 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_edito
  */
 function enqueue_block_editor_assets() {
 	// Make paths variables so we don't write em twice ;)
-	$block_path = '/assets/js/editor.blocks.js';
-	$style_path = '/assets/css/blocks.editor.css';
+	$block_path = '/dist/js/editor.blocks.js';
+	$style_path = '/dist/css/blocks.editor.css';
 
 	// Enqueue the bundled block JS file
 	wp_enqueue_script(
@@ -33,7 +33,7 @@ add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_assets' );
  * Enqueue front end and editor JavaScript and CSS assets.
  */
 function enqueue_assets() {
-	$style_path = '/assets/css/blocks.style.css';
+	$style_path = '/dist/css/blocks.style.css';
 	wp_enqueue_style(
 		'wceu-2018-reactsblock-frontend-css',
 		_get_plugin_url() . $style_path,
@@ -53,7 +53,7 @@ function enqueue_frontend_assets() {
 		return;
 	}
 
-	$block_path = '/assets/js/frontend.blocks.js';
+	$block_path = '/dist/js/frontend.blocks.js';
 	wp_enqueue_script(
 		'wceu-2018-reactsblock-frontend-js',
 		_get_plugin_url() . $block_path,

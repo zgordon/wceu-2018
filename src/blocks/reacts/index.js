@@ -22,7 +22,7 @@ export default registerBlockType(
 		category: 'common',
 		icon: {
 			src: 'heart',
-			background: '#F06860',
+			background: '#F06861',
 		},
 		keywords: [
 			__( 'Meta', 'reactsblock' ),
