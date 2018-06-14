@@ -1,7 +1,8 @@
 /**
- * Block dependencies
+ * Block dependencies and components
  */
 import './style.scss';
+import { Heart } from '../../components/heart.js';
 
 /**
  * Internal block libraries
@@ -50,7 +51,16 @@ export default registerBlockType(
 					</InspectorControls>
 				),
 				<div className={ className } >
-					<p>{ __( 'Check the meta yo!', 'reactsblock' ) }</p>
+					<div className="reacts-wrap">
+						<div className="heart-wrap">
+							<Heart/>
+						</div>
+						<div className="count-wrap">
+							<div className="count">
+								{ reacts }
+							</div>
+						</div>
+					</div>
 				</div>
 			];
 		},
