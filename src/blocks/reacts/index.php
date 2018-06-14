@@ -31,7 +31,7 @@ function render_reacts_block() {
 	// Start our output buffer for templates
 	ob_start();
 	?>
-	<div class="reacts-block-wrap">
+	<div id="reacts-block" class="reacts-block-wrap">
 		<div class="reacts-block-wrap-temp-counter">
 			<?php echo esc_html( $reacts ); ?>
 		</div>

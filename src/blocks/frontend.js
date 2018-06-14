@@ -1,1 +1,2 @@
-console.log( 'Frontend Block JS' );
+// Import frontend JS
+import './reacts/frontend';
