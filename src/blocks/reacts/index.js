@@ -51,12 +51,12 @@ export default registerBlockType(
 					</InspectorControls>
 				),
 				<div className={ className } >
-					<div className="reacts-wrap">
+					<div className="reacts-block-wrap">
 						<div className="heart-wrap">
 							<Heart/>
 						</div>
 						<div className="count-wrap">
-							<div className="count">
+							<div className="reacts-block-count">
 								{ reacts }
 							</div>
 						</div>
