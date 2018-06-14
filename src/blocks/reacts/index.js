@@ -32,6 +32,7 @@ export default registerBlockType(
 		attributes: {
 			reacts: {
 				type: 'integer',
+				default: '0',
 				source: 'meta',
 				meta: 'wceu_2018_gb_reacts',
 			},
