@@ -61,3 +61,6 @@ include __DIR__ . '/lib/enqueue-scripts.php';
 
 // Register meta boxes
 include __DIR__ . '/lib/meta-boxes.php';
+
+// Code for the dynamic portion of the block
+include __DIR__ . '/src/blocks/reacts/index.php';

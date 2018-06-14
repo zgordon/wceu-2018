@@ -61,13 +61,9 @@ export default registerBlockType(
 				</div>
 			];
 		},
-		save: props => {
-			const { attributes: { reacts } } = props;
-			return (
-				<div className="reacts-block-wrap">
-					<Counter count={ reacts } />
-				</div>
-			);
+		save() {
+			// We're rendering in PHP because this needs to be dynamic...
+			return null;
 		},
 	},
 );
