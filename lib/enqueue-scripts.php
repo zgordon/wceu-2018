@@ -57,7 +57,7 @@ function enqueue_frontend_assets() {
 	wp_enqueue_script(
 		'wceu-2018-reactsblock-frontend-js',
 		_get_plugin_url() . $block_path,
-		[ 'wp-element', 'wp-api-request' ],
+		[ 'wp-element', 'wp-api-request', 'wp-data' ],
 		filemtime( _get_plugin_directory() . $block_path ),
 		true // keep this in the footer!!
 	);

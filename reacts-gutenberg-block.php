@@ -64,3 +64,6 @@ include __DIR__ . '/lib/meta-boxes.php';
 
 // Code for the dynamic portion of the block
 include __DIR__ . '/src/blocks/reacts/index.php';
+
+// Code for the API Endpoint
+include __DIR__ . '/lib/api.php';

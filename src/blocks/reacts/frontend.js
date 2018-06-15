@@ -1,15 +1,20 @@
-// Use wp-element, which has been enqueued as a dependency
+/**
+ * WordPress JS Package Dependencies
+ */
 const { createElement, render } = wp.element;
 const apiRequest = wp.apiRequest;
 
 // Import our components
+import { Clicker } from "../../components/clicker";
 import { Wrapper } from "../../components/wrapper";
 
 // Make our FrontendRenderer component
 const FrontendRenderer = props => {
 	const { reacts } = props;
 	return createElement( 'div', null,
-		<Wrapper reacts={reacts} />
+		<Clicker>
+			<Wrapper reacts={reacts} />
+		</Clicker>
 	);
 };
 
