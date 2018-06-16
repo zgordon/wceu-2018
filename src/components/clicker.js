@@ -1,65 +1,8 @@
-// Use wp-data package for our store
-const { data, apiRequest } = wp;
-const { registerStore, dispatch, select } = data;
-
-const DEFAULT_STATE = {
-	reacts: 0,
-	clickable: false,
-	active: true,
-};
-
 /**
- * Register our store!! (wceu-2018-reacts)
+ * WP Dependencies
  */
-registerStore( 'wceu-2018-reacts', {
-	reducer( state = DEFAULT_STATE, action ) {
-		switch ( action.type ) {
-			case 'INCREMENT_COUNT':
-				return {
-					...state,
-					reacts: state.reacts + 1,
-				};
-
-			case 'ACTIVATE':
-				return {
-					...state,
-					active: false,
-				};
-
-			case 'DISABLE_CLICK':
-				return {
-					...state,
-					clickable: false,
-				};
-		}
-	},
-
-	actions: {
-		incrementCount() {
-			return {
-				type: 'INCREMENT_COUNT',
-			};
-		},
-		activate() {
-			return {
-				type: 'ACTIVATE',
-			};
-		},
-		disableClick() {
-			return {
-				type: 'DISABLE_CLICK',
-			};
-		},
-	},
-
-	selectors: {
-		getReacts( state ) {
-			const { reacts } = state;
-
-			return reacts;
-		},
-	},
-} );
+const { select, dispatch, withSelect } = wp.data;
+const apiRequest = wp.apiRequest;
 
 /**
  * Click Handler
@@ -67,13 +10,30 @@ registerStore( 'wceu-2018-reacts', {
  * @returns {*}
  * @constructor
  */
-export const Clicker = props => {
-	const { children, clickable } = props;
+export const Clicker = (props) => {
+	const { post_id, active, children } = props;
 
+	// Do this when clicked
 	function handleClick( event ) {
-		dispatch( 'wceu-2018-reacts' ).incrementCount();
+		// Prevent default event handling...
+		event.preventDefault();
 
-		console.log( select( 'wceu-2018-reacts' ).getReacts() );
+		// See if this has been activated
+		let activated = select( 'wceu-2018-reacts' ).isActivated();
+
+		// Bail is this is activated already
+		if ( activated ) {
+			return;
+		}
+
+		// If not, activate this thing so that it can't happen again!
+		dispatch( 'wceu-2018-reacts' ).activate();
+
+		// Run an API request to our endpoint
+		apiRequest( { path: `/wceu-2018-reacts/v1/increment/${post_id}` } ).then( data => {
+			// Wait for the API request to come back and then update the new amount of reacts
+			dispatch( 'wceu-2018-reacts' ).setReacts( data );
+		} );
 	}
 
 	return (
@@ -81,4 +41,4 @@ export const Clicker = props => {
 			{ children }
 		</div>
 	);
-}
+};

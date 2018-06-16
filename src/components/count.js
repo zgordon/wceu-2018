@@ -1,4 +1,4 @@
-export const Counter = props => {
+export const Count = props => {
 	const { count } = props;
 
 	return (

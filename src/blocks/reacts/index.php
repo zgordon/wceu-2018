@@ -33,7 +33,7 @@ function render_reacts_block() {
 	?>
 	<div id="reacts-block" class="reacts-block-wrap" data-post-id="<?php echo esc_attr( get_the_ID() ); ?>">
 		<div class="reacts-block-wrap-temp-counter">
-			<?php echo esc_html( $reacts ); ?> People Loved This!
+			<?php echo esc_html( $reacts ) . ' ' . __( 'People Loved This!', 'reactsblock' ); ?>
 		</div>
 	</div>
 	<?php

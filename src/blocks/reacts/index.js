@@ -2,7 +2,7 @@
  * Block dependencies and components
  */
 import './style.scss';
-import { Wrapper } from '../../components/wrapper.js';
+import { Wrapper } from '../../components/wrapper';
 
 /**
  * Internal block libraries
@@ -51,7 +51,7 @@ export default registerBlockType(
 						</PanelBody>
 					</InspectorControls>
 				),
-				<Wrapper reacts={ reacts }/>
+				<Wrapper reacts={ reacts } />
 			];
 		},
 		save() {
