@@ -23,7 +23,8 @@ function increment_reacts( $data ) {
 	// Get current reacts
 	$current_reacts = get_post_meta( $post_id, 'wceu_2018_gb_reacts', true );
 
-	if ( ! $current_reacts ) {
+	// If there is no value, return false
+	if ( $current_reacts === false ) {
 		return false;
 	}
 
