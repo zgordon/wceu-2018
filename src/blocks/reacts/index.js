@@ -29,29 +29,14 @@ export default registerBlockType(
 			__( 'Meta', 'reactsblock' ),
 			__( 'Reacts', 'reactsblock' ),
 		],
-		attributes: {
-			reacts: {
-				type: 'integer',
-				default: '0',
-				source: 'meta',
-				meta: 'wceu_2018_gb_reacts',
-			},
-		},
+		attributes: { },
 		edit: props => {
 			const { attributes: { reacts }, className, setAttributes, isSelected } = props;
 			return [
-				isSelected && (
-					<InspectorControls>
-						<PanelBody>
-							<TextControl
-								label={ __( 'Meta box', 'jsforwpblocks' ) }
-								value={ reacts }
-								onChange={ reacts => setAttributes( { reacts } ) }
-							/>
-						</PanelBody>
-					</InspectorControls>
-				),
-				<Wrapper reacts={ reacts } />
+				<InspectorControls>
+					<PanelBody>
+					</PanelBody>
+				</InspectorControls>
 			];
 		},
 		save() {

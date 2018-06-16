@@ -11,18 +11,8 @@ const icon = <svg width='50px' height='50px' viewBox='0 0 20 20' xmlns='http://w
 </svg>;
 
 export const Heart = props => {
-	const { active } = props;
-
-	// Add the filled class if it's in the props using classNames
-	let classes = classNames(
-		'reacts-block-heart',
-		{ 'active': active }
-	);
-
-	// Return the heart icon
 	return (
-		<div className={classes}>
-			{ icon }
+		<div>
 		</div>
 	);
 };
