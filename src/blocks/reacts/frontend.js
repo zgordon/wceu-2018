@@ -3,7 +3,7 @@
  */
 const { createElement, render } = wp.element;
 const apiRequest = wp.apiRequest;
-const { registerStore, dispatch, select, subscribe } = wp.data;
+const { registerStore, dispatch, subscribe } = wp.data;
 
 /**
  * Our Components
